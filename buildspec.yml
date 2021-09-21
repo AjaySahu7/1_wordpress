@@ -5,7 +5,7 @@ env:
            DB_Name: "/vinayak/db_name"
            DB_User: "/vinayak/db_user"
            DB_Password: "/vinayak/db_password"
-           DB_host: "/vinayak/db_host"
+           DB_Host: "/vinayak/db_host"
 
 
    
