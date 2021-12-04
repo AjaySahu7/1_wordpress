@@ -2,10 +2,10 @@ version: 0.2
 
 env:
    parameter-store:
-           DB_Name: "/vinayak/db_name"
-           DB_User: "/vinayak/db_user"
-           DB_Password: "/vinayak/db_password"
-           DB_Host: "/vinayak/db_host"
+           DB_Name: "/Ajay/db_name"
+           DB_User: "/Ajay/db_user"
+           DB_Password: "/Ajay/db_password"
+           DB_Host: "/Ajay/db_host"
 
 
    
