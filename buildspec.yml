@@ -7,17 +7,23 @@ env:
            DB_Password: "/Ajay/db_password"
            DB_Host: "/Ajay/db_host"
 
-
-   
-
-               
+              
 phases:
+   pre_build:
+    commands:
+      - apt update -y
+      - echo Installing source wordpress dependencies.
+      - apt install nginx -y
+      - apt install php php-fpm php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip -y
    build:
-        commands:
-            - sed -i 's/database_name_here/'$DB_Name'/' wp-config.php
-            - sed -i 's/username_here/'$DB_User'/' wp-config.php
-            - sed -i 's/password_here/'$DB_Password'/' wp-config.php
-            - sed -i 's/localhost/'$DB_Host'/' wp-config.php
+    commands:
+      - sed -i 's/database_name_here/'$DB_Name'/' wp-config.php
+      - sed -i 's/username_here/'$DB_User'/' wp-config.php
+      - sed -i 's/password_here/'$DB_Password'/' wp-config.php
+      - sed -i 's/localhost/'$DB_Host'/' wp-config.php
+   post_build:
+    commands:
+      - echo Build completed on `date`
             
 artifacts:
         files:
